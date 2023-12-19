@@ -30,7 +30,9 @@ namespace Taogar.Finance.Auth.Services
 
             AppId = IDes["AppKeyCloakId"];
 
-            var roles = IDes.GetSection("Roles");
+            var adminData = configuration.GetSection("KeyCloakAdminData");
+            KeyCloakAdminUserName = adminData["username"];
+            KeyCloakAdminUserPassword = adminData["password"];
         }
 
         public string AppName { get; private set; }
@@ -40,7 +42,8 @@ namespace Taogar.Finance.Auth.Services
 
         public string AppId { get; private set; }
 
-        
+        public string KeyCloakAdminUserName { get; private set; }
+        public string KeyCloakAdminUserPassword { get; private set; }
 
         public string RoleId(string role)
         {

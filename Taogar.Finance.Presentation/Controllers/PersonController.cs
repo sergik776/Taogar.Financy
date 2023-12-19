@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using System.Data;
 using System.Reflection;
 using Taogar.Finance.Application.DataTransferObjects;
 using Taogar.Finance.Application.Interfaces;
@@ -35,10 +36,11 @@ namespace Taogar.Finance.Presentation.Controllers
         [HttpPost]
         [TypeFilter(typeof(KeyCloakMethodRoleFilter), Arguments = new[] { "Manager" })]
         [TypeFilter(typeof(KeyCloakDynamicMethodFilter))]
-        public async Task<PersonInfoDTO> AddPerson([FromBody] CreatePersonDTO model)
+        public async Task<IActionResult> AddPerson([FromBody] CreatePersonDTO model)
         {
             logger.Info<PersonController>($"Добавить клиента", ConsoleColor.Green);
-            return await personService.AddPerson(model);
+            await personService.AddPerson(model);
+            return Created();
         }
 
         /// <summary>

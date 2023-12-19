@@ -30,8 +30,8 @@ namespace Taogar.Finance.Auth.Services
             {
                 { "client_id", "admin-cli" },
                 { "grant_type", "password" },
-                { "username", "Taogar" },
-                { "password", "Sq*fG40Kru7" }
+                { "username", config.KeyCloakAdminUserName },
+                { "password", config.KeyCloakAdminUserPassword }
             };
             var requestContent = new FormUrlEncodedContent(requestData);
 
