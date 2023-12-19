@@ -1,20 +1,9 @@
-﻿using Logger;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Authorization.Infrastructure;
-using Microsoft.AspNetCore.Authorization.Policy;
+﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Newtonsoft.Json.Linq;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
 using System.Security.Claims;
-using System.Text;
-using System.Threading.Tasks;
 using Taogar.Finance.Auth.Interfaces;
 using Taogar.Finance.Auth.Services;
-using Taogar.HTTP.Domain.Models.Errors;
-using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace Taogar.Finance.Auth.AccessPolicy
 {
@@ -25,11 +14,11 @@ namespace Taogar.Finance.Auth.AccessPolicy
     public class AppOwnershipAuthorizationHandler : AuthorizationHandler<AppAuthorizationRequirement>
     {
         private readonly AuthConfig config;
-        private readonly ILogger logger;
+        private readonly Logger.ILogger logger;
         private readonly IHttpContextAccessor httpContextAccessor;
         private readonly IUserService userService;
 
-        public AppOwnershipAuthorizationHandler(AuthConfig _config, ILogger _logger, IHttpContextAccessor _httpContextAccessor, IUserService _userService)
+        public AppOwnershipAuthorizationHandler(AuthConfig _config, Logger.ILogger _logger, IHttpContextAccessor _httpContextAccessor, IUserService _userService)
         {
             config = _config;
             logger = _logger;

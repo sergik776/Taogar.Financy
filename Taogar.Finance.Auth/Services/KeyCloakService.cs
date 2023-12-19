@@ -42,6 +42,16 @@ namespace Taogar.Finance.Auth.Services
                 // Читаем содержимое ответа (в формате JSON)
                 string responseContent = await response.Content.ReadAsStringAsync();
                 dynamic jsonObject = Newtonsoft.Json.JsonConvert.DeserializeObject(responseContent);
+
+                if (httpClient.DefaultRequestHeaders.FirstOrDefault(x => x.Key == "Authorization").Value == null)
+                {
+                    httpClient.DefaultRequestHeaders.Add("Authorization", $"Bearer {jsonObject.access_token}");
+                }
+                else
+                {
+                    httpClient.DefaultRequestHeaders.Remove("Authorization");
+                    httpClient.DefaultRequestHeaders.Add("Authorization", $"Bearer {jsonObject.access_token}");
+                }
                 return jsonObject.access_token;
             }
             else
@@ -52,9 +62,8 @@ namespace Taogar.Finance.Auth.Services
 
         public async Task<string> GetIdByParams(string firstName, string lastName, string email)
         {
-            Token = await Autorize();
+            await Autorize();
             string path = $"/admin/realms/TaogarSmartCloud/users?email={email}&firstName={firstName}&lastName={lastName}";
-            httpClient.DefaultRequestHeaders.Add("Authorization", $"Bearer {Token}");
             var response = await httpClient.GetAsync(path);
             if (response.IsSuccessStatusCode)
             {
@@ -71,7 +80,7 @@ namespace Taogar.Finance.Auth.Services
 
         public async Task<HttpStatusCode> AssingRoleToUser(string firstName, string lastName, string email, string roleName)
         {
-            Token = await Autorize();
+            Autorize();
             string UserId = await GetIdByParams(firstName, lastName, email);
 
             string path = $"/admin/realms/TaogarSmartCloud/users/{UserId}/role-mappings/clients/{config.AppId}";
@@ -83,6 +92,35 @@ namespace Taogar.Finance.Auth.Services
             StringContent content = new StringContent(json, Encoding.UTF8, new MediaTypeHeaderValue("application/json"));
             var response = await httpClient.PostAsync(path, content);
             return response.EnsureSuccessStatusCode().StatusCode;
+        }
+
+        public async Task<HttpStatusCode> CreateKeyCloakUser(string _firstName, string _lastName, string _userName, string _email)
+        {
+            await Autorize();
+
+            string path = $"/admin/realms/TaogarSmartCloud/users";
+            string json = Newtonsoft.Json.JsonConvert.SerializeObject(new
+            {
+                email = _email,
+                firstName = _firstName,
+                lastName = _lastName,
+                enabled = true,
+                username = _userName,
+                emailVerified = true,
+                credentials = new List<object>
+                {
+                    new 
+                    { 
+                        type = "password", 
+                        value =  "0000",
+                        temporary = true
+                    }
+                }
+            });
+
+            StringContent content = new StringContent(json, Encoding.UTF8, new MediaTypeHeaderValue("application/json"));
+            var response = await httpClient.PostAsync(path, content);
+            return response.StatusCode;
         }
     }
 }

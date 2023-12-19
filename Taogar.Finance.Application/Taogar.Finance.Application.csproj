@@ -7,7 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\TaogarGameServersNF\Logger\Logger.csproj" />
+    <ProjectReference Include="..\Logger\Logger.csproj" />
     <ProjectReference Include="..\Taogar.Finance.Auth\Taogar.Finance.Auth.csproj" />
     <ProjectReference Include="..\Taogar.Finance.Database\Taogar.Finance.Database.csproj" />
     <ProjectReference Include="..\Taogar.HTTP.Domain\Taogar.HTTP.Domain.csproj" />

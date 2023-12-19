@@ -56,7 +56,8 @@ builder.Services.AddScoped<IPersonService>(provider =>
     if(((IUserService)provider.GetRequiredService(typeof(IUserService))).Role == "Manager")
     {
         return new PersonServiceForManagers((Logger.ILogger)provider.GetRequiredService(typeof(Logger.ILogger)),
-            (IGenericRepository<Person>)provider.GetRequiredService(typeof(IGenericRepository<Person>)));
+            (IGenericRepository<Person>)provider.GetRequiredService(typeof(IGenericRepository<Person>)),
+            (IKeyCloakService)provider.GetRequiredService(typeof(IKeyCloakService)));
     }
     else
     {

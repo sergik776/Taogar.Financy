@@ -8,11 +8,11 @@ namespace Logger
 {
     public class ConsoleLogger : ILogger
     {
-        public void Error<T>(string message)
+        public void Error<T>(string message, ConsoleColor color = ConsoleColor.Gray)
         {
-            Console.ForegroundColor = ConsoleColor.Gray;
+            Console.ForegroundColor = ConsoleColor.Red;
             Console.Write(DateTime.Now.ToString("dd.MM.yy HH:mm:ss:fff") + " |");
-            Console.ForegroundColor = ConsoleColor.DarkMagenta;
+            Console.ForegroundColor = color;
             Console.Write($" {typeof(T).Name}");
             Console.ForegroundColor = ConsoleColor.Gray;
             Console.Write(" |");
@@ -23,11 +23,11 @@ namespace Logger
             Console.WriteLine(message);
         }
 
-        public void Warn<T>(string message)
+        public void Warn<T>(string message, ConsoleColor color = ConsoleColor.Gray)
         {
-            Console.ForegroundColor = ConsoleColor.Gray;
+            Console.ForegroundColor = ConsoleColor.Yellow;
             Console.Write(DateTime.Now.ToString("dd.MM.yy HH:mm:ss:fff") + " |");
-            Console.ForegroundColor = ConsoleColor.DarkMagenta;
+            Console.ForegroundColor =color;
             Console.Write($" {typeof(T).Name}");
             Console.ForegroundColor = ConsoleColor.Gray;
             Console.Write(" |");

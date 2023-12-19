@@ -11,5 +11,6 @@ namespace Taogar.Finance.Auth.Interfaces
     {
         public Task<string> GetIdByParams(string firstName, string lastName, string email);
         public Task<HttpStatusCode> AssingRoleToUser(string firstName, string lastName, string email, string roleName);
+        public Task<HttpStatusCode> CreateKeyCloakUser(string _firstName, string _lastName, string _userName, string _email);
     }
 }

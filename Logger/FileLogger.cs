@@ -17,12 +17,12 @@ namespace Logger
             this.logFilePath = logFilePath;
         }
 
-        public void Error<T>(string message)
+        public void Error<T>(string message, ConsoleColor color = ConsoleColor.Gray)
         {
             LogToFile($"[ERROR] {typeof(T)}: {message}");
         }
 
-        public void Warn<T>(string message)
+        public void Warn<T>(string message, ConsoleColor color = ConsoleColor.Gray)
         {
             LogToFile($"[WARNING] {typeof(T)}: {message}");
         }

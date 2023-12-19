@@ -35,10 +35,10 @@ namespace Taogar.Finance.Presentation.Controllers
         [HttpPost]
         [TypeFilter(typeof(KeyCloakMethodRoleFilter), Arguments = new[] { "Manager" })]
         [TypeFilter(typeof(KeyCloakDynamicMethodFilter))]
-        public IActionResult AddPerson()
+        public async Task<PersonInfoDTO> AddPerson([FromBody] CreatePersonDTO model)
         {
             logger.Info<PersonController>($"Добавить клиента", ConsoleColor.Green);
-            return Ok();
+            return await personService.AddPerson(model);
         }
 
         /// <summary>

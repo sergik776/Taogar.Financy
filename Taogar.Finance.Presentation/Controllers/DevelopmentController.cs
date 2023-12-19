@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Routing;
 using Newtonsoft.Json;
+using System.Net;
 using Taogar.Finance.Auth.Interfaces;
 
 namespace Taogar.Finance.Presentation.Controllers
@@ -32,6 +33,14 @@ namespace Taogar.Finance.Presentation.Controllers
         {
             logger.Info<DevelopmentController>("Запрос добавления роли");
             return (await keyCloakService.AssingRoleToUser(firstName, lastName, email, rolename)).ToString();
+        }
+
+        [HttpGet("AddUser")]
+        public async Task<HttpStatusCode> CreateKeyCloakUser([FromQuery] string _firstName, string _lastName, string _userName, string _email)
+        {
+            logger.Info<DevelopmentController>("Запрос добавления юзера");
+            await keyCloakService.CreateKeyCloakUser(_firstName, _lastName, _userName, _email);
+            return await keyCloakService.AssingRoleToUser(_firstName, _lastName, _email, "User");
         }
     }
 }

@@ -14,7 +14,7 @@ namespace Logger
             Loggers = new List<ILogger>(loggers);
         }
 
-        public void Error<T>(string message)
+        public void Error<T>(string message, ConsoleColor color = ConsoleColor.Gray)
         {
             foreach (var logger in Loggers)
             {
@@ -30,7 +30,7 @@ namespace Logger
             }
         }
 
-        public void Warn<T>(string message)
+        public void Warn<T>(string message, ConsoleColor color = ConsoleColor.Gray)
         {
             foreach (var logger in Loggers)
             {
