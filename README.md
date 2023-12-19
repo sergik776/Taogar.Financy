@@ -7,17 +7,17 @@
 
 Структура проекта 5 уровней:
 1) Домен
-\t1.1) Taogar.Authentication.Domain
+   1.1) Taogar.Authentication.Domain
    1.2) Taogar.Notes.Domain
-2) Инфраструктара
+3) Инфраструктара
    2.1) Taogar.Notes.Infrastructure
-3) Источник данных
+4) Источник данных
    3.1) Taogar.Notes.Database
-4) Приложение
+5) Приложение
    4.1) Logger
    4.2) Taogar.Authentication.Application
    4.3) Taogar.Notes.Application
-5) Презентация
+6) Презентация
    5.1) Taogar.Notes.Presentation
 
 ## Установка
