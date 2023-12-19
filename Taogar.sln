@@ -1,0 +1,96 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34321.82
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 Domain", "1 Domain", "{7BED87CC-367E-481E-922E-A05B7BE7F961}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 Infrastructure", "2 Infrastructure", "{3901E274-17F8-40DC-AB71-2E2F2BA37421}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 Database", "3 Database", "{0DECD9FD-F029-4352-AFF6-B7AC67D92B30}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4 Application", "4 Application", "{00D7A010-71B8-430E-BDCB-1E1A4470EB4A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5 Presentation", "5 Presentation", "{ED551EFB-E6BE-461E-9319-0AD1C7E790B6}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Taogar.Finance.Domain", "Taogar.Finance.Domain\Taogar.Finance.Domain.csproj", "{96E6308A-1993-4CC6-B4AF-8A259500C9FF}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Taogar.Finance.Infrastructure", "Taogar.Finance.Infrastructure\Taogar.Finance.Infrastructure.csproj", "{D0A2AA3B-DEA4-4522-B615-8B27F4021054}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Taogar.Finance.Database", "Taogar.Finance.Database\Taogar.Finance.Database.csproj", "{537B527E-E17C-4A77-8BBB-39ADBFA1A287}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Taogar.Finance.Application", "Taogar.Finance.Application\Taogar.Finance.Application.csproj", "{3717223F-F108-42A9-88B3-B0D18FE43716}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Taogar.Finance.Presentation", "Taogar.Finance.Presentation\Taogar.Finance.Presentation.csproj", "{027C314C-1925-4D0D-B0AE-34FDBBF69E2B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logger", "..\TaogarGameServersNF\Logger\Logger.csproj", "{B0C84CFA-7FF7-46D1-A25D-5B2A6AAD402E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Taogar.Finance.Auth", "Taogar.Finance.Auth\Taogar.Finance.Auth.csproj", "{4E72F747-7C4F-4B48-9AA7-3A3D55DDF984}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Taogar.HTTP.Domain", "Taogar.HTTP.Domain\Taogar.HTTP.Domain.csproj", "{F40CD29D-A8FE-4B20-853C-42ADFCEB4967}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "6 Tests", "6 Tests", "{7FD8E7B1-60B3-43CC-AABB-73B23BB2B50B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Taogar.Tests.Financy", "Taogar.Tests.Financy\Taogar.Tests.Financy.csproj", "{95033B89-25E5-4DBE-9EB9-73EE25304949}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{96E6308A-1993-4CC6-B4AF-8A259500C9FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{96E6308A-1993-4CC6-B4AF-8A259500C9FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{96E6308A-1993-4CC6-B4AF-8A259500C9FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{96E6308A-1993-4CC6-B4AF-8A259500C9FF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D0A2AA3B-DEA4-4522-B615-8B27F4021054}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D0A2AA3B-DEA4-4522-B615-8B27F4021054}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D0A2AA3B-DEA4-4522-B615-8B27F4021054}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D0A2AA3B-DEA4-4522-B615-8B27F4021054}.Release|Any CPU.Build.0 = Release|Any CPU
+		{537B527E-E17C-4A77-8BBB-39ADBFA1A287}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{537B527E-E17C-4A77-8BBB-39ADBFA1A287}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{537B527E-E17C-4A77-8BBB-39ADBFA1A287}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{537B527E-E17C-4A77-8BBB-39ADBFA1A287}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3717223F-F108-42A9-88B3-B0D18FE43716}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3717223F-F108-42A9-88B3-B0D18FE43716}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3717223F-F108-42A9-88B3-B0D18FE43716}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3717223F-F108-42A9-88B3-B0D18FE43716}.Release|Any CPU.Build.0 = Release|Any CPU
+		{027C314C-1925-4D0D-B0AE-34FDBBF69E2B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{027C314C-1925-4D0D-B0AE-34FDBBF69E2B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{027C314C-1925-4D0D-B0AE-34FDBBF69E2B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{027C314C-1925-4D0D-B0AE-34FDBBF69E2B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B0C84CFA-7FF7-46D1-A25D-5B2A6AAD402E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B0C84CFA-7FF7-46D1-A25D-5B2A6AAD402E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B0C84CFA-7FF7-46D1-A25D-5B2A6AAD402E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B0C84CFA-7FF7-46D1-A25D-5B2A6AAD402E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4E72F747-7C4F-4B48-9AA7-3A3D55DDF984}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4E72F747-7C4F-4B48-9AA7-3A3D55DDF984}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4E72F747-7C4F-4B48-9AA7-3A3D55DDF984}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4E72F747-7C4F-4B48-9AA7-3A3D55DDF984}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F40CD29D-A8FE-4B20-853C-42ADFCEB4967}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F40CD29D-A8FE-4B20-853C-42ADFCEB4967}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F40CD29D-A8FE-4B20-853C-42ADFCEB4967}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F40CD29D-A8FE-4B20-853C-42ADFCEB4967}.Release|Any CPU.Build.0 = Release|Any CPU
+		{95033B89-25E5-4DBE-9EB9-73EE25304949}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{95033B89-25E5-4DBE-9EB9-73EE25304949}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{95033B89-25E5-4DBE-9EB9-73EE25304949}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{95033B89-25E5-4DBE-9EB9-73EE25304949}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{96E6308A-1993-4CC6-B4AF-8A259500C9FF} = {7BED87CC-367E-481E-922E-A05B7BE7F961}
+		{D0A2AA3B-DEA4-4522-B615-8B27F4021054} = {3901E274-17F8-40DC-AB71-2E2F2BA37421}
+		{537B527E-E17C-4A77-8BBB-39ADBFA1A287} = {0DECD9FD-F029-4352-AFF6-B7AC67D92B30}
+		{3717223F-F108-42A9-88B3-B0D18FE43716} = {00D7A010-71B8-430E-BDCB-1E1A4470EB4A}
+		{027C314C-1925-4D0D-B0AE-34FDBBF69E2B} = {ED551EFB-E6BE-461E-9319-0AD1C7E790B6}
+		{B0C84CFA-7FF7-46D1-A25D-5B2A6AAD402E} = {00D7A010-71B8-430E-BDCB-1E1A4470EB4A}
+		{4E72F747-7C4F-4B48-9AA7-3A3D55DDF984} = {00D7A010-71B8-430E-BDCB-1E1A4470EB4A}
+		{F40CD29D-A8FE-4B20-853C-42ADFCEB4967} = {7BED87CC-367E-481E-922E-A05B7BE7F961}
+		{95033B89-25E5-4DBE-9EB9-73EE25304949} = {7FD8E7B1-60B3-43CC-AABB-73B23BB2B50B}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B66B10E3-025A-4BEB-B6ED-63B3B5D61E25}
+	EndGlobalSection
+EndGlobal

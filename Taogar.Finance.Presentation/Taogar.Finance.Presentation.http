@@ -1,0 +1,6 @@
+@Taogar.Finance.Presentation_HostAddress = http://localhost:5210
+
+GET {{Taogar.Finance.Presentation_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
